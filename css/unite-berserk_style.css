@@ -1,65 +1,166 @@
 body {
-    background-color: rgb(53, 53, 53);
-    margin: 0;
-  }
-  
-* {
-    box-sizing: border-box;
-  }
+  background-color: rgb(53, 53, 53);
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+}
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 10%;
-    background-color: #1a1a1a;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-  }
-  
-li a {
-    display: block;
-    color: rgb(255, 255, 255);
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-  
-li a.active {
-    background-color: #0b3279;
-    color: white;
-  }
-  
-li a:hover:not(.active) {
-    background-color: rgb(53, 53, 53);
-    color: white;
-  }
-  
-.menu {
-    width: 33%;
-    float: left;
-    padding: 15px;
-    border: 1px solid red;
-  }
-  
+* {
+  box-sizing: border-box;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 10%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  resize: none;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a,
+.dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover,
+.dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
 .main {
-    width: 66%;
-    float: left;
-    padding: 15px;
-    border: 1px solid red;
-  }
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: blue;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+  resize: none;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+.menu {
+  width: 33%;
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
+
+.main {
+  width: 66%;
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
 
 .header {
-    background-color: rgb(51, 51, 51);
-    text-align: center;
-    padding: 20px;
-  }  
+  background-color: rgb(51, 51, 51);
+  text-align: center;
+  padding: 20px;
+}
 
 div {
-    resize: both;
-    overflow: auto;
-  }
+  resize: both;
+  overflow: auto;
+}
 
 textarea {
-    resize: none;
-  }
+  resize: none;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  border: green;
+  resize: none;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.round-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  border-radius: 50%;
+  resize: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.material-icons-custom {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  margin-top: 5px;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}

@@ -5,17 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UNITE-BERSERK</title>
     <link rel="stylesheet" href="css\unite-berserk_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </head>
   <body>
-    <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
+    <div class="sidenav">
+      <a href="">
+        <img src="images/okapie_boss.jpg" alt="" class="round-image">
+      </a>
+      <a href="#about">Qui sommes nous ?</a>
+      <button class="dropdown-btn">
+        NFTs
+        <span class="material-icons-custom center-text" > arrow_drop_down </span>
+      </button>
+      <div class="dropdown-container">
+        <a href="#">Space Okapi</a>
+      </div>
+      <a href="#projet">Projet</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-    <div style="margin-left: 25%; padding: 1px 16px; height: 1000px">
-      <h2>Fixed Full-height Side Nav</h2>
+    <div class="center">
+      <div class="center">
+        <img
+          src="images/okapie_boss.jpg"
+          alt=""
+          class="round-image center-text"
+        />
+        <h1 class="center-text">UNITE-BERSERK NFT</h1>
+      </div>
+
+      <br />
       <h3>
         Try to scroll this area, and see how the sidenav sticks to the page
       </h3>
@@ -38,4 +65,5 @@
       <p>Some text..</p>
     </div>
   </body>
+  <script src="js/main.js"></script>
 </html>
