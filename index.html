@@ -11,28 +11,62 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("bkZYtG6n8iv0xCS-4");
+      })();
+    </script>
+
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = (Math.random() * 100000) | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm("contact_service", "contact_form", this).then(
+              function () {
+                console.log("SUCCESS!");
+              },
+              function (error) {
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
   </head>
   <body>
     <div class="sidenav">
       <a href="">
-        <img src="images/okapie_boss.jpg" alt="" class="round-image">
+        <img src="images/okapie_boss.jpg" alt="" class="round-image" />
       </a>
-      <a href="#about">Qui sommes nous ?</a>
+      <a href="#aboutUs">Qui sommes nous ?</a>
       <button class="dropdown-btn">
         NFTs
-        <span class="material-icons-custom center-text" > arrow_drop_down </span>
+        <span class="material-icons-custom center-text"> arrow_drop_down </span>
       </button>
       <div class="dropdown-container">
-        <a href="#">Space Okapi</a>
+        <a href="#space_okapi">Space Okapi</a>
       </div>
       <a href="#projet">Projet</a>
       <a href="#contact">Contact</a>
     </div>
 
     <div class="center">
+      <!-- Titre -->
       <div class="center">
         <img
           src="images/okapie_boss.jpg"
@@ -40,29 +74,107 @@
           class="round-image center-text"
         />
         <h1 class="center-text">UNITE-BERSERK NFT</h1>
+        <br />
+      </div>
+
+      <!-- AboutUs -->
+      <div class="">
+        <h2 class="center-text" id="aboutUs">Qui sommes nous ?</h2>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non
+          felis fermentum, volutpat turpis a, pharetra purus. Praesent et mi
+          vitae nulla elementum imperdiet. Sed ligula nisl, rutrum at accumsan
+          ac, aliquam sit amet sem. Ut at egestas enim, non semper leo. Morbi
+          tempus ac urna a posuere. Vestibulum at enim id lectus varius iaculis
+          sed in velit. Mauris a arcu in lorem commodo sollicitudin. Vivamus
+          ultricies diam non condimentum cursus. Quisque libero mauris, finibus
+          quis elementum eu, cursus vitae justo. Aenean accumsan sit amet mauris
+          et fermentum. Vestibulum tincidunt id mauris a interdum. Praesent
+          velit elit, pellentesque et posuere eget, convallis in ex. Ut et
+          commodo odio. Nunc gravida, nulla non auctor condimentum, ex enim
+          luctus velit, sit amet vehicula urna felis eget urna. Nam porta eros
+          condimentum venenatis rutrum. Etiam finibus massa sed augue vehicula
+          laoreet. Aliquam mi justo, ullamcorper id urna ut, elementum commodo
+          mauris.
+        </p>
       </div>
 
       <br />
-      <h3>
-        Try to scroll this area, and see how the sidenav sticks to the page
-      </h3>
+
+      <!-- NFT -->
+      <div class="">
+        <h2 class="center-text">NFTs</h2>
+        <br />
+        <p class="center-text" id="space_okapi">Collection Space Okapi</p>
+        <div class="wrap">
+
+          <div class="box">
+            <div class="boxInner">
+              <img src="images/okapie_gentleman.jpg"/>
+               <div class="desc">
+                 <p> Space Okapi - John </p>
+                
+               </div>
+             </div>
+           </div>
+          
+           <div class="box">
+            <div class="boxInner">
+              <a target="blank_" href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/65329249392011274790929059978874886071382382539624678833788513247461013192734/">
+              <img src="images/okapie_bitch.jpg"/>
+               
+              </a>
+              <div class="desc">
+                 Space Okapi - Wife of Cthulhu 
+              </div>
+            </div>
+           </div>
+          
+           <div class="box">
+            <div class="boxInner">
+             <img src="images/okapie_cthullhu.jpg"/>
+              <div class="desc">
+                <p> Okapi - Cthulhu </p> 
+              </div>
+            </div>
+           </div>
+          
+           <div class="box">
+            <div class="boxInner">
+             <img src="images/okapie_cowboy.jpg"/>
+              <div class="desc">
+                <p> Space Okapi - Cowboy </p>Space Okapi - Cowboy
+              </div>
+            </div>
+           </div>
+
+
+        </div>
+      </div>
+
+      <!-- Projet -->
+
+      <!-- Contact -->
+      <div>
+        <h2>Nous contacter</h2>
+        <form id="contact-form">
+          <input type="hidden" name="contact_number" />
+          <label>Name</label>
+          <input type="text" name="user_name" />
+          <label>Email</label>
+          <input type="email" name="user_email" />
+          <label>Message</label>
+          <textarea name="message"></textarea>
+          <input type="submit" value="Send" />
+        </form>
+      </div>
+
       <p>
         Notice that this div element has a left margin of 25%. This is because
         the side navigation is set to 25% width. If you remove the margin, the
         sidenav will overlay/sit on top of this div.
       </p>
-      <p>
-        Also notice that we have set overflow:auto to sidenav. This will add a
-        scrollbar when the sidenav is too long (for example if it has over 50
-        links inside of it).
-      </p>
-      <p>Some text..</p>
-      <p>Some text..</p>
-      <p>Some text..</p>
-      <p>Some text..</p>
-      <p>Some text..</p>
-      <p>Some text..</p>
-      <p>Some text..</p>
     </div>
   </body>
   <script src="js/main.js"></script>
